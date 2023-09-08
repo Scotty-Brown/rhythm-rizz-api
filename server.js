@@ -1,8 +1,10 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 app.use(express.json())
 app.set('port', process.env.PORT || 3000)
 
+app.use(cors())
 app.locals.title = 'Rhythm and Rizz'
 app.locals.poems = [
     {
