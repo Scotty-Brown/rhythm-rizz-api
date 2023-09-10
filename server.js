@@ -22,7 +22,7 @@ app.locals.poems = [
 
 app.get('/api/v1/poems', (req, res) => {
     const poems = app.locals.poems
-    res.json({ poems })
+    res.status(200).json({ poems })
 })
 
 app.get('/api/v1/poems/:id', (req,res)=> {
@@ -38,9 +38,16 @@ app.post('/api/v1/poems', (request, response) => {
     const id = Date.now()
     const {title, author, poem} = request.body
 
-    app.locals.poems.push({id, title, author, poem})
-
-    response.status(201).json({id, title, author, poem})
+    if(!title){
+        return response.status(404).json({error:'Please add a title.'})
+    } else if (!author) {
+        return response.status(404).json({error:'Please add an author.'})
+    } else if (!poem) {
+        return response.status(404).json({error:'Please add a poem.'})
+    } else {
+            app.locals.poems.push({id, title, author, poem})
+            response.status(201).json({id, title, author, poem})
+    }
 })
 
 app.listen(app.get('port'), () => {
