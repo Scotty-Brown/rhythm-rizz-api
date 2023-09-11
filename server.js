@@ -40,16 +40,6 @@ app.post('/api/v1/poems', (request, response) => {
 
     return response.status(201).json(newPoem)
 
-    // if(!title){
-    //     return response.status(404).json({error:'Please add a title.'})
-    // } else if (!author) {
-    //     return response.status(404).json({error:'Please add an author.'})
-    // } else if (!poem) {
-    //     return response.status(404).json({error:'Please add a poem.'})
-    // } else {
-    //         app.locals.poems.push({id, title, author, poem})
-    //         response.status(201).json({id, title, author, poem})
-    // }
 })
 
 app.listen(app.get('port'), () => {
