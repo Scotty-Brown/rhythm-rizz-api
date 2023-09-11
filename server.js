@@ -26,19 +26,30 @@ app.get('/api/v1/poems/:id', (req,res)=> {
 })
 
 app.post('/api/v1/poems', (request, response) => {
-    const id = Date.now()
+    const id = Date.now().toString()
     const {title, author, poem} = request.body
 
-    if(!title){
-        return response.status(404).json({error:'Please add a title.'})
-    } else if (!author) {
-        return response.status(404).json({error:'Please add an author.'})
-    } else if (!poem) {
-        return response.status(404).json({error:'Please add a poem.'})
-    } else {
-            app.locals.poems.push({id, title, author, poem})
-            response.status(201).json({id, title, author, poem})
+    if(!title || !author || !poem) {
+      return response.status(422).json({
+        error:'Expected format { title: <String>, author: <String>, poem: <String>}. Missing valid input.'
+      })
     }
+
+    const newPoem = {id, title, author, poem}
+    app.locals.poems = [...poems, newPoem]
+
+    return response.status(201).json(newPoem)
+
+    // if(!title){
+    //     return response.status(404).json({error:'Please add a title.'})
+    // } else if (!author) {
+    //     return response.status(404).json({error:'Please add an author.'})
+    // } else if (!poem) {
+    //     return response.status(404).json({error:'Please add a poem.'})
+    // } else {
+    //         app.locals.poems.push({id, title, author, poem})
+    //         response.status(201).json({id, title, author, poem})
+    // }
 })
 
 app.listen(app.get('port'), () => {
