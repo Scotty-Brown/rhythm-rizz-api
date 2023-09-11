@@ -1,24 +1,15 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
+const {poems} = require('./data')
+
 app.use(express.json())
+app.use(cors())
+
 app.set('port', process.env.PORT || 3000)
 
-app.use(cors())
 app.locals.title = 'Rhythm and Rizz'
-app.locals.poems = [
-    {
-    id: '1', 
-    title: 'Happy Day', 
-    author: 'Kapowies', 
-    poem: 'On a happy day, the sun does shine, Its golden rays, a gift divine.The world awakens with a cheerful song,As nature\'s beauty dances along.'
-}, {
-    id: '2', 
-    title: 'Sad Day', 
-    author: 'Kapowies', 
-    poem: 'On a somber day, the skies are gray, As tears of rain obscure the way. A heavy heart burdened with sorrow, Longs for a brighter, hopeful tomorrow.'
-}
-]
+app.locals.poems = poems
 
 app.get('/api/v1/poems', (req, res) => {
     const poems = app.locals.poems
