@@ -17,7 +17,7 @@ app.get('/api/v1/poems', (req, res) => {
 })
 
 app.get('/api/v1/poems/:id', (req,res)=> {
-    const poem = app.locals.poems.find(poem=>poem.id.toString()===req.params.id)
+    const poem = app.locals.poems.find(poem=>poem.id===req.params.id)
     if(!poem){
      return res.status(404).json({error:'You yearn for a rhyme but your request ran out of time. please return home.'})
     } else {
@@ -28,6 +28,7 @@ app.get('/api/v1/poems/:id', (req,res)=> {
 app.post('/api/v1/poems', (request, response) => {
     const id = Date.now().toString()
     const {title, author, poem} = request.body
+    const poems = app.locals.poems
 
     if(!title || !author || !poem) {
       return response.status(422).json({

@@ -257,6 +257,78 @@ const poems = [
         We surf its pages, in awe we gaze,
         A cyber haven, where inspiration plays.
       `
+    },
+    {
+      id: '22',
+      title: "Whispers of the Wind",
+      author: "Secret Siren",
+      poem: `
+        Beneath the silver moon's soft light,
+        I listen to the wind at night,
+        Its gentle voice, a lullaby,
+        In nature's arms, I close my eyes,
+        Whispers of the wind, so kind.
+      `
+    },
+    {
+      id: '23',
+      title: "Sunrise Serenity",
+      author: "Mystic Toad",
+      poem: `
+        As dawn breaks with golden grace,
+        A brand new day, a fresh embrace,
+        The world awakens, colors blend,
+        Sunrise serenity, a message to send,
+        Hope in every sun-kissed face.
+      `
+    },
+    {
+      id: '24',
+      title: "Dancing Raindrops",
+      author: "Jeremy Beremy",
+      poem: `
+        Raindrops tap upon my windowpane,
+        Like tiny dancers in a gentle refrain,
+        They waltz and twirl in rhythmic glee,
+        Nature's ballet, for all to see,
+        In each drop, a world to contain.
+      `
+    },
+    {
+      id: '25',
+      title: "Eternal Stars",
+      author: "Tinkie Winkie",
+      poem: `
+        Up above, the midnight sky,
+        A canvas painted, stars on high,
+        Each one a story, a distant fire,
+        Their beauty, a cosmic choir,
+        In their twinkle, dreams can't die.
+      `
+    },
+    {
+      id: '26',
+      title: "Autumn's Embrace",
+      author: "Hornet Hears",
+      poem: `
+        Leaves of amber, red, and gold,
+        In the forest, a story to be told,
+        Autumn's embrace, a fleeting kiss,
+        Nature's art, in colors amiss,
+        A season's beauty, a sight to behold.
+      `
+    },
+    {
+      id: '27',
+      title: "Whispers of the Sea",
+      author: "Olivia Orca",
+      poem: `
+        Beside the shore where waters meet,
+        I find solace in the ocean's heartbeat,
+        Each wave a tale, a timeless plea,
+        Whispers of the sea, setting my spirit free,
+        In its endless rhythm, my heart finds its beat.
+      `
     }
 ]
 
